@@ -17,7 +17,11 @@ namespace DigiShopping.Controllers
             _shoppingCartBAL = shoppingCartBAL;
         }
 
-
+        /// <summary>
+        /// API to calculate total amt,points and discount for the shopping cart
+        /// </summary>
+        /// <param name="shoppingRequest"></param>
+        /// <returns></returns>
         [Route("[controller]/checkout")]
         [HttpPost]
         public async Task<IActionResult>  CheckOut(ShoppingRequest shoppingRequest)

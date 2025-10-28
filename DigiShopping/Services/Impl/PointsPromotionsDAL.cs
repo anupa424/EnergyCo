@@ -15,7 +15,10 @@ namespace DigiShopping.Services.Impl
             _cache = cache;
             _digitShoppingContext = digitShoppingContext;
         }
-
+        /// <summary>
+        /// method to cache all the data in pointpromotions to cache
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<PointsPromotion>> GetPointPromotions()
         {
             if (_cache.TryGetValue($"pointpromotions", out List<PointsPromotion> cachedPoints))
@@ -29,7 +32,9 @@ namespace DigiShopping.Services.Impl
             _cache.Set($"pointpromotions", points, TimeSpan.FromMinutes(3600));
             return points;
         }
-
+        /// <summary>
+        /// method to incvalidate the cache
+        /// </summary>
         public void InvalidatePointPromotionsCache()
         {
             _cache.Remove($"pointpromotions");

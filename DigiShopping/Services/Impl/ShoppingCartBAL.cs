@@ -15,7 +15,7 @@ namespace DigiShopping.Services.Impl
 
         }
         /// <summary>
-        /// 
+        /// service to compute the shopping cart -points ,discounts
         /// </summary>
         /// <param name="shoppingRequest"></param>
         /// <returns></returns>
